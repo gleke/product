@@ -8,12 +8,12 @@ import (
 	"log"
 	"strings"
 
-	"github.com/hexya-addons/decimalPrecision"
-	"github.com/hexya-erp/hexya/src/models"
-	"github.com/hexya-erp/hexya/src/models/operator"
-	"github.com/hexya-erp/pool/h"
-	"github.com/hexya-erp/pool/m"
-	"github.com/hexya-erp/pool/q"
+	"github.com/gleke/decimalPrecision"
+	"github.com/gleke/hexya/src/models"
+	"github.com/gleke/hexya/src/models/operator"
+	"github.com/gleke/pool/h"
+	"github.com/gleke/pool/m"
+	"github.com/gleke/pool/q"
 )
 
 func init() {

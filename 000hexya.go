@@ -5,11 +5,11 @@ package product
 
 import (
 	// product module dependencies
-	_ "github.com/hexya-addons/decimalPrecision"
-	_ "github.com/hexya-addons/web"
-	_ "github.com/hexya-addons/webKanban"
-	"github.com/hexya-erp/hexya/src/models/security"
-	"github.com/hexya-erp/hexya/src/server"
+	_ "github.com/gleke/decimalPrecision"
+	"github.com/gleke/hexya/src/models/security"
+	"github.com/gleke/hexya/src/server"
+	_ "github.com/gleke/web"
+	_ "github.com/gleke/webKanban"
 )
 
 const MODULE_NAME string = "product"

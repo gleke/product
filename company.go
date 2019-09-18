@@ -4,10 +4,10 @@
 package product
 
 import (
-	"github.com/hexya-erp/hexya/src/models"
-	"github.com/hexya-erp/pool/h"
-	"github.com/hexya-erp/pool/m"
-	"github.com/hexya-erp/pool/q"
+	"github.com/gleke/hexya/src/models"
+	"github.com/gleke/pool/h"
+	"github.com/gleke/pool/m"
+	"github.com/gleke/pool/q"
 )
 
 func init() {

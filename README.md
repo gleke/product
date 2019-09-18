@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/hexya-addons/product.svg?branch=master)](https://travis-ci.com/hexya-addons/product)
-[![Go Report Card](https://goreportcard.com/badge/hexya-addons/product)](https://goreportcard.com/report/hexya-addons/product)
+[![Build Status](https://travis-ci.com/gleke/product.svg?branch=master)](https://travis-ci.com/gleke/product)
+[![Go Report Card](https://goreportcard.com/badge/gleke/product)](https://goreportcard.com/report/gleke/product)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 # Product
