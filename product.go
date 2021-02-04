@@ -571,7 +571,7 @@ func product_product_SelectSeller(rs m.ProductProductSet, partner m.PartnerSet, 
 
 //`PriceCompute returns the price field defined by priceType in the given uom and currency
 //		for the given company.`,
-func product_product_PriceCompute(rs m.ProductProductSet, priceType models.FieldNamer, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
+func product_product_PriceCompute(rs m.ProductProductSet, priceType models.FieldName, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
 	rs.EnsureOne()
 	// FIXME: delegate to template or not ? fields are reencoded here ...
 	// compatibility about context keys used a bit everywhere in the code

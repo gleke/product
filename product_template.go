@@ -389,7 +389,7 @@ func product_template_SearchByName(rs m.ProductTemplateSet, name string, op oper
 
 //`PriceCompute returns the price field defined by priceType in the given uom and currency
 //		for the given company.`,
-func product_template_PriceCompute(rs m.ProductTemplateSet, priceType models.FieldNamer, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
+func product_template_PriceCompute(rs m.ProductTemplateSet, priceType models.FieldName, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
 	rs.EnsureOne()
 	template := rs
 	if priceType == q.ProductTemplate().StandardPrice() {
