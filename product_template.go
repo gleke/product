@@ -32,7 +32,7 @@ This description will be copied to every Purchase Order, Receipt and Vendor Bill
 	"DescriptionSale": fields.Char{String: "Sale Description", Translate: true,
 		Help: `A description of the Product that you want to communicate to your customers.
 This description will be copied to every Sale Order, Delivery Order and Customer Invoice/Refund`},
-	"Type": fields.Char{String: "Product Type", Selection: types.Selection{
+	"Type": fields.Selection{String: "Product Type", Selection: types.Selection{
 		"consu":   "Consumable",
 		"service": "Service",
 	}, Default: models.DefaultValue("consu"), Required: true,
