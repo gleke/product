@@ -637,7 +637,7 @@ func product_product_GetHistoryPrice(rs m.ProductProductSet, company m.CompanySe
 			And().Product().In(rs).
 			And().Datetime().LowerOrEqual(date)).Limit(1)
 	return history.Cost()
-})
+}
 
 //`NeedProcurement`,
 func product_product_NeedProcurement(rs m.ProductProductSet) bool {
