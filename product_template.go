@@ -78,7 +78,7 @@ This description will be copied to every Sale Order, Delivery Order and Customer
 			return !security.Registry.HasMembership(env.Uid(), base.GroupUser), nil
 		},
 		Help: "Cost of the product, in the default unit of measure of the product."},
-	"Volume": models.FloatField{Compute: h.ProductTemplate().Methods().ComputeVolume(),
+	"Volume": fields.Float{Compute: h.ProductTemplate().Methods().ComputeVolume(),
 		Depends: []string{"ProductVariants", "ProductVariants.Volume"},
 		Inverse: h.ProductTemplate().Methods().InverseVolume(), Help: "The volume in m3.", Stored: true},
 	"Weight": fields.Float{Compute: h.ProductTemplate().Methods().ComputeWeight(),
@@ -389,7 +389,7 @@ func product_template_SearchByName(rs m.ProductTemplateSet, name string, op oper
 
 //`PriceCompute returns the price field defined by priceType in the given uom and currency
 //		for the given company.`,
-func product_template_PriceCompute(rs m.ProductTemplateSet, priceType models.FieldName, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
+func product_template_PriceCompute(rs m.ProductTemplateSet, priceType models.FieldNames, uom m.ProductUomSet, currency m.CurrencySet, company m.CompanySet) float64 {
 	rs.EnsureOne()
 	template := rs
 	if priceType == q.ProductTemplate().StandardPrice() {

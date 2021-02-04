@@ -56,7 +56,7 @@ func partner_InverseProductPricelist(rs m.PartnerSet, priceList m.ProductPriceli
 }
 
 //`CommercialFields`,
-func partner_CommercialFields(rs m.PartnerSet) []models.FieldName {
+func partner_CommercialFields(rs m.PartnerSet) []models.FieldNames {
 	return append(rs.Super().CommercialFields(), q.Partner().PropertyProductPricelist())
 }
 func init() {
