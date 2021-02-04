@@ -15,7 +15,7 @@ import (
 )
 
 var fields_ProductUomCategory = map[string]models.FieldDefinition{
-	"Name": models.CharField{String: "Name", Required: true, Translate: true},
+	"Name": fields.Char{String: "Name", Required: true, Translate: true},
 }
 
 var fields_ProductUom = map[string]models.FieldDefinition{

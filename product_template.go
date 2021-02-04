@@ -78,7 +78,7 @@ This description will be copied to every Sale Order, Delivery Order and Customer
 			return !security.Registry.HasMembership(env.Uid(), base.GroupUser), nil
 		},
 		Help: "Cost of the product, in the default unit of measure of the product."},
-	"Volume": models.FloatField{Compute: h.ProductTemplate().Methods().ComputeVolume(),
+	"Volume": fields.Float{Compute: h.ProductTemplate().Methods().ComputeVolume(),
 		Depends: []string{"ProductVariants", "ProductVariants.Volume"},
 		Inverse: h.ProductTemplate().Methods().InverseVolume(), Help: "The volume in m3.", Stored: true},
 	"Weight": fields.Float{Compute: h.ProductTemplate().Methods().ComputeWeight(),
