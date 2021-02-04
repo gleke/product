@@ -38,6 +38,12 @@ var fields_ProductCategory = map[string]models.FieldDefinition{
 		Depends: []string{"Products"}, GoType: new(int)},
 }
 
+//`ComputeProductCount returns the number of products within this category (not considering children categories)`,
+func product_category_ComputeProductCount(rs m.ProductCategorySet) m.ProductCategoryData {
+	return h.ProductCategory().NewData().SetProductCount(
+		h.ProductTemplate().Search(rs.Env(), q.ProductTemplate().Category().Equals(rs)).SearchCount())
+}
+
 //`CheckCategoryRecursion panics if there is a recursion in the category tree.`,
 func product_category_CheckCategoryRecursion(rs m.ProductCategorySet) {
 	if !rs.CheckRecursion() {
@@ -699,6 +705,7 @@ func init() {
 	h.ProductCategory().SetDefaultOrder("Parent.Name")
 
 	h.ProductCategory().NewMethod("CheckCategoryRecursion", product_category_CheckCategoryRecursion)
+	h.ProductCategory().NewMethod("ComputeProductCount", product_category_ComputeProductCount)
 
 	h.ProductCategory().Methods().SearchByName().Extend(product_category_SearchByName)
 	h.ProductCategory().Methods().NameGet().Extend(product_category_NameGet)
