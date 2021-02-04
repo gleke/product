@@ -22,23 +22,23 @@ import (
 )
 
 var fields_ProductPricelist = map[string]models.FieldDefinition{
-	"Name": models.CharField{String: "Pricelist Name", Required: true, Translate: true},
-	"Active": models.BooleanField{Default: models.DefaultValue(true), Required: true,
+	"Name": fields.Char{String: "Pricelist Name", Required: true, Translate: true},
+	"Active": fields.Boolean{Default: models.DefaultValue(true), Required: true,
 		Help: "If unchecked, it will allow you to hide the pricelist without removing it."},
-	"Items": models.One2ManyField{String: "Pricelist Items", RelationModel: h.ProductPricelistItem(),
+	"Items": fields.One2Many{String: "Pricelist Items", RelationModel: h.ProductPricelistItem(),
 		ReverseFK: "Pricelist", JSON: "item_ids", Copy: true,
 		Default: func(env models.Environment) interface{} {
 			values := h.ProductPricelistItem().NewData().
 				SetComputePrice("formula")
 			return h.ProductPricelistItem().Create(env, values)
 		}},
-	"Currency": models.Many2OneField{RelationModel: h.Currency(),
+	"Currency": fields.Many2One{RelationModel: h.Currency(),
 		Default: func(env models.Environment) interface{} {
 			return h.User().NewSet(env).CurrentUser().Company().Currency()
 		}, Required: true},
-	"Company":       models.Many2OneField{RelationModel: h.Company()},
-	"Sequence":      models.IntegerField{Default: models.DefaultValue(16)},
-	"CountryGroups": models.Many2ManyField{RelationModel: h.CountryGroup(), JSON: "country_group_ids"},
+	"Company":       fields.Many2One{RelationModel: h.Company()},
+	"Sequence":      fields.Integer{Default: models.DefaultValue(16)},
+	"CountryGroups": fields.Many2Many{RelationModel: h.CountryGroup(), JSON: "country_group_ids"},
 }
 
 func product_pricelist_NameGet(rs m.ProductPricelistSet) string {
