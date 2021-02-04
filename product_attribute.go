@@ -192,7 +192,7 @@ func init() {
 
 	h.ProductAttributeLine().AddFields(fields_ProductAttributeLine)
 
-	h.ProductAttributeLine().NewMethod("ComputeName", product_attribute_ine_ComputeName)
+	h.ProductAttributeLine().NewMethod("ComputeName", product_attribute_line_ComputeName)
 	h.ProductAttributeLine().NewMethod("CheckValidAttribute", product_attribute_line_CheckValidAttribute)
 	h.ProductAttributeLine().NewMethod("VariantName", product_attribute_line_ComputeName)
 
